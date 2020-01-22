@@ -1,7 +1,10 @@
 from django.db import models
 
 
-class Jobs(models.Model):
+class Job(models.Model):
 
     image = models.ImageField(upload_to="images/")
-    Summary = models.CharField(max_length=250)
+    summary = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.summary
